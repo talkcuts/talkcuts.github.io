@@ -4,12 +4,10 @@
   <meta charset="utf-8">
   <meta name="description"
         content="Put your title here">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="keywords" content="TalkCuts, Orator">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TalkCuts: A Large-Scale Dataset for Multi-Shot Human Speech Video Generation</title>
 
-<!--   Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -124,7 +122,7 @@
         <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            In this work, we present TalkCuts, a large-scale benchmark dataset designed to facilitate the study of multi-shot human speech video generation. Unlike existing datasets that focus on single-shot, static viewpoints, TalkCuts offers 164k clips totaling over 500 hours of high-quality human speech videos with diverse camera shots, including close-up, half-body, and full-body views. The dataset includes detailed textual descriptions, 3D SMPL-X motion annotations, and camera trajectories, covering a wide range of identities, enabling multimodal learning and evaluation. As a first attempt to showcase the value of the dataset, we present Orator, an LLM-guided multi-modal generation framework as a simple baseline, where the language model functions as a multi-faceted director, orchestrating detailed specifications for camera transitions, speaker gesticulations, and vocal modulation. This architecture enables the synthesis of coherent long-form videos through our integrated multi-modal video generation module. Extensive experiments in both pose-guided and audio-driven settings show that training on TalkCuts significantly enhances the cinematographic coherence and visual appeal of generated multi-shot speech videos. We believe TalkCuts provides a strong foundation for future work in controllable, multi-shot speech video generation and broader multimodal learning. The dataset, tools, and evaluation protocols will be publicly released to facilitate community progress.
+            In this work, we present TalkCuts, a large-scale benchmark dataset designed to facilitate the study of multi-shot human speech video generation. Unlike existing datasets that focus on single-shot, static viewpoints, TalkCuts offers 164k clips totaling over 500 hours of high-quality human speech videos with diverse camera shots, including close-up, half-body, and full-body views. The dataset includes detailed textual descriptions, 2D keypoints and 3D SMPL-X motion annotations, covering a wide range of identities, enabling multimodal learning and evaluation. As a first attempt to showcase the value of the dataset, we present Orator, an LLM-guided multi-modal generation framework as a simple baseline, where the language model functions as a multi-faceted director, orchestrating detailed specifications for camera transitions, speaker gesticulations, and vocal modulation. This architecture enables the synthesis of coherent long-form videos through our integrated multi-modal video generation module. Extensive experiments in both pose-guided and audio-driven settings show that training on TalkCuts significantly enhances the cinematographic coherence and visual appeal of generated multi-shot speech videos. We believe TalkCuts provides a strong foundation for future work in controllable, multi-shot speech video generation and broader multimodal learning. The dataset, tools, and evaluation protocols will be publicly released to facilitate community progress.
           </p>
         </div>
       </div>
@@ -309,98 +307,129 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h1 class="title is-2">Video Generation Comparison</h1>
+        <h1 class="title is-2">Audio-driven Video Generation Comparison</h1>
       </div>
     </div>
-
-    <!-- <div class="hero-body"> -->
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-teaser1">
           <video poster="" id="teaser1" autoplay muted controls loop playsinline >
-            <source src="./static/videos/compare1.mp4"
+            <source src="./static/videos/audio_compare1.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-teaser2">
           <video poster="" id="teaser2" autoplay muted controls loop playsinline >
-            <source src="./static/videos/compare2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-teaser3">
-          <video poster="" id="teaser3" autoplay muted controls loop playsinline >
-            <source src="./static/videos/compare3.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-teaser4">
-          <video poster="" id="teaser4" autoplay muted controls loop playsinline >
-            <source src="./static/videos/compare4.mp4"
+            <source src="./static/videos/audio_compare2.mp4"
                     type="video/mp4">
           </video>
         </div>
       </div>
     </div>
     <center>
-          <p> We compare our generated human speech video with state-of-the-art human video generation baselines. </p>
-        </center>
-    <!--/ Paper video. -->
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">SMPLX Prediction Results</h2>
-        <video id="teaser"  loop playsinline width="40%">
-          <source src="./static/videos/a.mp4"
-                  type="video/mp4">
-        </video>
-        <video id="teaser"  loop playsinline width="40%">
-          <source src="./static/videos/a.mp4"
-                  type="video/mp4">
-        </video>
-        <p>Put your video here.</p>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
+          <p> We compare our generated human speech video with state-of-the-art audio-driven human video generation baselines. </p>
+    </center>
   </div>
 </section>
 
-  <section class="section">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h1 class="title is-2">Video Generation Results</h1>
+        <h1 class="title is-2">Audio-driven Multi-Shot Long Video Generation Results</h1>
       </div>
     </div>
 
-    <!-- <div class="hero-body">
-      <div class="container"> -->
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-vid1">
-            <video poster="" id="vid1" controls loop playsinline height="100%">
-              <source src="./static/videos/final_vid1.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-vid2">
-            <video poster="" id="vid2" controls loop playsinline height="100%">
-              <source src="./static/videos/final_vid2.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <!-- <div class="item item-vid3">
-            <video poster="" id="vid3" controls loop playsinline height="100%">
-              <source src="./static/videos/long_3.mp4"
-                      type="video/mp4">
-            </video>
-          </div> -->
-          
-        </div>
-        <center>
-            <p> We demonstrate our generated human speech video with multi camera shots. </p>
-          </center>
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item">
+        <video poster="" id="vid1" controls loop playsinline>
+          <source src="./static/videos/audio_final_vid1.mp4" type="video/mp4">
+        </video>
       </div>
-    </section>
+      <div class="item">
+        <video poster="" id="vid2" controls loop playsinline>
+          <source src="./static/videos/audio_final_vid2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <center>
+      <p>We demonstrate our audio-driven generated long human speech video with multi camera shots.</p>
+    </center>
+  </div>
+</section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h1 class="title is-2"></h1>
+          </div>
+        </div>
+    
+        <!-- <div class="hero-body">
+          <div class="container"> -->
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item item-vid1">
+                <video poster="" id="vid1" controls loop playsinline height="100%">
+                  <source src="./static/videos/pose_compare.mp4"
+                          type="video/mp4">
+                </video>
+              </div>           
+            </div>
+            <center>
+                <p> </p>
+              </center>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <h1 class="title is-2">Pose-driven Video Generation Demonstrations</h1>
+              </div>
+            </div>
+        
+            <!-- <div class="hero-body">
+              <div class="container"> -->
+                <div id="results-carousel" class="carousel results-carousel">
+                  <div class="item item-vid1">
+                    <video poster="" id="vid1" controls loop playsinline height="100%">
+                      <source src="./static/videos/pose_compare.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>           
+                </div>
+                <center>
+                    <p> We provide results of different state-of-the-art pose-driven human video generation baselines before and after fine-tuning on our TalkCuts dataset. </p>
+                  </center>
+              </div>
+            </section>
+  
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h1 class="title is-2">Pose-driven Multi-Shot Long Video Generation Result</h1>
+          </div>
+        </div>
+    
+        <!-- <div class="hero-body">
+          <div class="container"> -->
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item item-vid1">
+                <video poster="" id="vid1" controls loop playsinline height="100%">
+                  <source src="./static/videos/final_vid1.mp4"
+                          type="video/mp4">
+                </video>
+              </div>           
+            </div>
+            <center>
+                <p> We demonstrate a long human speech video with multi camera shots generated using the fine-tuned ControlNeXT model. </p>
+              </center>
+          </div>
+        </section>
 
 
 
