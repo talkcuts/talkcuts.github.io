@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Put your title here">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TalkCuts: A Large-Scale Dataset for Multi-Shot Human Speech Video Generation</title>
+
+<!--   Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> 
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <style>
+    .gradient-text {
+      background: linear-gradient(90deg, #ff7e5f, #feb47b, #86a8e7);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+  </style>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+<!--           <h1 class="title is-1 publication-title">Put your title here</h1> -->
+          <h1 class="title is-1 publication-title">
+            <span class="gradient-text">TalkCuts</span>: A Large-Scale Dataset for Multi-Shot Human Speech Video Generation
+          </h1>
+          <!-- <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this work, we present TalkCuts, a large-scale benchmark dataset designed to facilitate the study of multi-shot human speech video generation. Unlike existing datasets that focus on single-shot, static viewpoints, TalkCuts offers 164k clips totaling over 500 hours of high-quality human speech videos with diverse camera shots, including close-up, half-body, and full-body views. The dataset includes detailed textual descriptions, 3D SMPL-X motion annotations, and camera trajectories, covering a wide range of identities, enabling multimodal learning and evaluation. As a first attempt to showcase the value of the dataset, we present Orator, an LLM-guided multi-modal generation framework as a simple baseline, where the language model functions as a multi-faceted director, orchestrating detailed specifications for camera transitions, speaker gesticulations, and vocal modulation. This architecture enables the synthesis of coherent long-form videos through our integrated multi-modal video generation module. Extensive experiments in both pose-guided and audio-driven settings show that training on TalkCuts significantly enhances the cinematographic coherence and visual appeal of generated multi-shot speech videos. We believe TalkCuts provides a strong foundation for future work in controllable, multi-shot speech video generation and broader multimodal learning. The dataset, tools, and evaluation protocols will be publicly released to facilitate community progress.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Put your abstract here.
+          </p>
+          <p>
+            Put your abstract here.
+          </p>
+          <p>
+            Put your abstract here.
+        </div>
+      </div>
+    </div> -->
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">TalkCuts Dataset</h2>
+        <!-- <video id="teaser"  loop playsinline height="100%">
+          <source src="./static/videos/a.mp4"
+                  type="video/mp4">
+        </video>
+        <p>Put your video here.</p> -->
+      </div>
+    </div>
+    
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-3">Dataset Overview</h1>
+        <video id="teaser" autoplay muted controls loop playsinline height="100%">
+          <source src="./static/videos/dataset_v3.mp4"
+                  type="video/mp4">
+        </video>
+        <p> We present samples from TalkCuts dataset, which features a diverse collection of videos from talk shows, TED talks, stand-up comedy, and other speech scenarios. </p>
+      </div>
+    </div>
+
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-3">Dataset Annotations</h1>
+      </div>
+    </div>
+    <!-- <div class="hero-body"> -->
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-ann1">
+            <video poster="" id="ann1"  controls loop playsinline height="100%">
+              <source src="./static/videos/ann1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ann2">
+            <video poster="" id="ann2"  controls loop playsinline height="100%">
+              <source src="./static/videos/ann2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ann3">
+            <video poster="" id="ann3"  controls loop playsinline height="100%">
+              <source src="./static/videos/ann3.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ann4">
+            <video poster="" id="ann4"  controls loop playsinline height="100%">
+              <source src="./static/videos/ann4.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ann5">
+            <video poster="" id="ann5"  controls loop playsinline height="100%">
+              <source src="./static/videos/ann5.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ann6">
+            <video poster="" id="ann6"  controls loop playsinline height="100%">
+              <source src="./static/videos/ann6.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ann7">
+            <video poster="" id="ann7"  controls loop playsinline height="100%">
+              <source src="./static/videos/ann7.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ann8">
+            <video poster="" id="ann8"  controls loop playsinline height="100%">
+              <source src="./static/videos/ann8.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ann9">
+            <video poster="" id="ann9"  controls loop playsinline height="100%">
+              <source src="./static/videos/ann9.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ann10">
+            <video poster="" id="ann10"  controls loop playsinline height="100%">
+              <source src="./static/videos/ann10.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <center>
+          <p> We provide visualization of 2D keypoints and 3D SMPLX annotation of the TalkCuts dataset. </p>
+        </center>
+      </div>
+    <!-- </div> -->
+  </div>
+</section>
+    <!--/ Paper video. -->
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Dataset</h2>
+        <video id="teaser"  loop playsinline height="100%">
+          <source src="./static/videos/a.mp4"
+                  type="video/mp4">
+        </video>
+        <p>Put your video here.</p>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Generated Long Videos</h2>
+        <video id="teaser"  loop playsinline height="100%">
+          <source src="./static/videos/a.mp4"
+                  type="video/mp4">
+        </video>
+        <p>Put your video here.</p>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video Generation Results</h2>
+        <video id="teaser1"  loop playsinline width="100%">
+          <source src="./static/videos/compare1.mp4"
+                  type="video/mp4">
+        </video>
+        <p> </p>
+        <video id="teaser2"  loop playsinline width="100%">
+          <source src="./static/videos/compare2.mp4"
+                  type="video/mp4">
+        </video>
+        <p> </p>
+        <video id="teaser3"  loop playsinline width="100%">
+          <source src="./static/videos/compare3.mp4"
+                  type="video/mp4">
+        </video>
+        <p> </p>
+        <video id="teaser4"  loop playsinline width="100%">
+          <source src="./static/videos/compare4.mp4"
+                  type="video/mp4">
+        </video>
+        <p> </p>
+      </div>
+    </div> -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-2">Video Generation Comparison</h1>
+      </div>
+    </div>
+
+    <!-- <div class="hero-body"> -->
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-teaser1">
+          <video poster="" id="teaser1" autoplay muted controls loop playsinline >
+            <source src="./static/videos/compare1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-teaser2">
+          <video poster="" id="teaser2" autoplay muted controls loop playsinline >
+            <source src="./static/videos/compare2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-teaser3">
+          <video poster="" id="teaser3" autoplay muted controls loop playsinline >
+            <source src="./static/videos/compare3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-teaser4">
+          <video poster="" id="teaser4" autoplay muted controls loop playsinline >
+            <source src="./static/videos/compare4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <center>
+          <p> We compare our generated human speech video with state-of-the-art human video generation baselines. </p>
+        </center>
+    <!--/ Paper video. -->
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">SMPLX Prediction Results</h2>
+        <video id="teaser"  loop playsinline width="40%">
+          <source src="./static/videos/a.mp4"
+                  type="video/mp4">
+        </video>
+        <video id="teaser"  loop playsinline width="40%">
+          <source src="./static/videos/a.mp4"
+                  type="video/mp4">
+        </video>
+        <p>Put your video here.</p>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+  <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-2">Video Generation Results</h1>
+      </div>
+    </div>
+
+    <!-- <div class="hero-body">
+      <div class="container"> -->
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-vid1">
+            <video poster="" id="vid1" controls loop playsinline height="100%">
+              <source src="./static/videos/final_vid1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-vid2">
+            <video poster="" id="vid2" controls loop playsinline height="100%">
+              <source src="./static/videos/final_vid2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <!-- <div class="item item-vid3">
+            <video poster="" id="vid3" controls loop playsinline height="100%">
+              <source src="./static/videos/long_3.mp4"
+                      type="video/mp4">
+            </video>
+          </div> -->
+          
+        </div>
+        <center>
+            <p> We demonstrate our generated human speech video with multi camera shots. </p>
+          </center>
+      </div>
+    </section>
+
+
+
+<footer class="footer">
+  <div class="container">
+      <div class="columns is-centered">
+          <div class="column">
+              <div class="content has-text-centered">
+                  <p>
+                      Website template borrowed from <a
+                          href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+</body>
+</html>
